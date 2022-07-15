@@ -1,0 +1,19 @@
+h1, p{
+    text-align: center;
+}
+
+li:hover{
+    background-color: royalblue;
+}
+
+li:active{
+    background-color: red;
+}
+
+ol{
+    list-style-type: georgian;
+}
+
+ul{
+    list-style-type: square;
+}
