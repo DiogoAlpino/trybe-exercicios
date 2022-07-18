@@ -11,6 +11,8 @@ h1 {
 
 h2 {
     font-size: 30px;
+    color: orangered;
+    text-decoration: underline;
 }
 
 #dados-gerais {
@@ -24,6 +26,17 @@ tbody {
 #img1 {
     width: 500px;
     border-radius: 15%;
+}
+
+nav ul li{
+   
+    padding-left: 15px;
+    font-size: 1.5em;
+    display: inline;
+    text-align: center;
+    color: royalblue;
+    text-decoration: none;
+    
 }
 
 img {
