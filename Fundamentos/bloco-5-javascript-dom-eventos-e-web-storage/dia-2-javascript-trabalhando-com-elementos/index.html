@@ -95,14 +95,30 @@
             ul.appendChild(criaLista);
         }
 
-        for (let index = 1; index <= 3; index += 1) {
+        for (let index = 0; index < 3; index += 1) {
             let h3 = document.createElement("h3");
             h3.innerHTML = "Texto generico";
             main.appendChild(h3);
         }
 
-        
+        h1.className = "title";
 
+        let todosh3 = document.getElementsByTagName("h3");
+        for (let index = 0; index < todosh3.length; index += 1) {
+            todosh3[index].className = "description";
+        }   
+
+        main.removeChild(section2);
+
+        let secaoDireita = document.getElementsByClassName("right-content");
+        secaoDireita[0].style.marginRight = "auto";
+
+        let principal = document.getElementsByTagName("main");
+        main.style.backgroundColor = "green";
+
+        let lista = document.getElementsByTagName("ul")[0];
+        lista.lastChild.remove();
+        lista.lastChild.remove();
 
     </script>
   </body>
