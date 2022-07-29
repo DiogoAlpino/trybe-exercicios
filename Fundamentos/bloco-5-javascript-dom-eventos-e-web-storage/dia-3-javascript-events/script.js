@@ -69,3 +69,24 @@ function createDaysOfTheWeek() {
   }
   
   createHolidayButton('Feriados'); //execute a função usando 'Feriados' como parâmetro.
+
+  //Exercicio 3
+
+  function displayHolidays() {
+    let getHolidayButton = document.querySelector('#btn-holiday'); // selecione o botão "Feriados";
+    let getHolidays = document.querySelectorAll('.holiday') // Seleciona todos os feriados como um array de elementos;
+    let backgroundColor = 'rgb(238,238,238)'; // armazena a cor da configuração inicial;
+    let setNewColor = 'pink'; // armazena a nova cor que será utilizada ao pressionar o botão.
+  
+    getHolidayButton.addEventListener('click', function() { //escutador de eventos ao botão, esse escutador deve aguardar um clique.
+      for (let index = 0; index < getHolidays.length; index += 1) { // Percorra o array de feriados e adicione as condições para troca de cor.
+        if (getHolidays[index].style.backgroundColor === setNewColor) {
+          getHolidays[index].style.backgroundColor = backgroundColor;
+        } else {
+          getHolidays[index].style.backgroundColor = setNewColor;
+        }
+      }
+    });
+  }
+
+  displayHolidays();
