@@ -57,3 +57,15 @@ function createDaysOfTheWeek() {
 
   //Exercicio 2
 
+  function createHolidayButton(buttonName) {
+    let buttonContainer = document.querySelector('.buttons-container'); //variável que armazene o seletor do container do botão.
+    let newButton = document.createElement('button'); //Crie um botão e armazene o valor da id em uma variável.
+    let newButtonID = 'btn-holiday'; //e armazene o valor da id em uma variável.
+  
+    newButton.innerHTML = buttonName;   //o nome do botão seja o mesmo passado por parâmetro à função 
+    newButton.id = newButtonID; //e o id do botão seja o mesmo que o id armazenado na variável.
+    
+    buttonContainer.appendChild(newButton); //Insira o botão no container selecionado 
+  }
+  
+  createHolidayButton('Feriados'); //execute a função usando 'Feriados' como parâmetro.
