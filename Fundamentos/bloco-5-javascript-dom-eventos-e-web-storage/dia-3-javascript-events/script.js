@@ -183,8 +183,8 @@ mouseOut();
 //O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
 
 function addTarefa (tarefa) {
-  tasksCont = document.querySelector(".my-tasks"); //Seleciona elemento com classe my-tasks
-  task = document.createElement("span"); //cria tarefa com tag span
+  let tasksCont = document.querySelector(".my-tasks"); //Seleciona elemento com classe my-tasks
+  let task = document.createElement("span"); //cria tarefa com tag span
 
   task.innerHTML = tarefa; //Colocar parametro da funcao como a nova tarefa
   tasksCont.appendChild(task); //Faz com que a tarefa seja filha do container com elemento my-tasks
@@ -193,3 +193,22 @@ function addTarefa (tarefa) {
 addTarefa("Limpar o quarto"); //Executa a funcao com o parametro escolhido
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Exercicio 8
+
+//Implemente uma função que adicione uma legenda com cor para a tarefa.
+//Essa função deverá receber como parâmetro uma string ('cor') e criar dinamicamente um elemento de tag `<div>` com a classe `task`.
+//O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
+//O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+
+function addLegenda (cor) {
+  let tasksCont = document.querySelector(".my-tasks");
+  let legenda = document.createElement("div");
+
+  legenda.className = "task";
+  legenda.style.backgroundColor = cor;
+  tasksCont.appendChild(legenda);
+
+}
+
+addLegenda("blue");
