@@ -265,3 +265,44 @@ function atribuiCor() {
 atribuiCor();
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Bonus
+
+//Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS",
+// adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
+//Se nenhum caractere for inserido no campo input, a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
+//Ao pressionar a tecla "enter" o evento também deverá ser disparado.
+//Dica - Propriedade: key.
+
+function addNovaTarefa () {
+  let novaTarefas = document.querySelector("#task-input"); //Seleciona elementos da classe task-input
+  let addNovoBotao = document.querySelector("#btn-add"); //Seleciona elementos da classe btn-add
+  let listaTasks = document.querySelector(".task-list"); //Seleciona elementos do id task-list
+
+  addNovoBotao.addEventListener("click", function(){ //Add botao
+    if (novaTarefas.value.length > 0) {
+      let novaLi = document.createElement("li"); //cria nova tarefa
+      novaLi.innerText = novaTarefas.value; //valor vai ser o que for inserido no botao
+
+      listaTasks.appendChild(novaLi); //coloca li como filha de task list
+      novaTarefas.value = ''; //o valor sera a string inserida
+
+    } else {
+      alert("Error: Digite ao menos 1 caractere.")
+    }
+  });
+
+  novaTarefas.addEventListener("keyup", function(event){
+    if (event.key === "Enter" && novaTarefas.value.length > 0) { //se o evento for a tecla enter + existir nova tarefa
+      let novaLi = document.createElement("li"); //cria nova li
+      novaLi.innerHTML = novaTarefas.value;
+
+      novaTarefas.appendChild(novaLi);
+      novaTarefas.value;
+    }
+
+  });
+}
+
+addNovaTarefa();
+
