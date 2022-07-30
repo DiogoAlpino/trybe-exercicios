@@ -13,6 +13,9 @@ function createDaysOfTheWeek() {
 
 createDaysOfTheWeek();
 
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 // Escreva seu código abaixo.
 
 let decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
@@ -55,6 +58,8 @@ function createDays() {
 
 createDays();
 
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
 //Exercicio 2
 
 function createHolidayButton(buttonName) {
@@ -69,6 +74,8 @@ function createHolidayButton(buttonName) {
 }
 
 createHolidayButton('Feriados'); //execute a função usando 'Feriados' como parâmetro.
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Exercicio 3
 
@@ -90,3 +97,54 @@ function displayHolidays() {
 }
 
 displayHolidays();
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Exercicio 4 (Mesmo passo a passo do Ex2)
+
+//Implemente uma função que crie dinamicamente um botão com o nome "Sexta-feira". Sua função deve receber como parâmetro a string "Sexta-feira".
+//Adicione a esse botão o ID "btn-friday";
+//Adicione esse botão como filho/filha da tag <div> com classe "buttons-container".
+
+function criaBotaoSexta(nomeBotao) {
+  let contBotao = document.querySelector(".buttons-container"); //Declarar a variavel pai
+  let novoBotao = document.createElement("button"); //Cria novo botao
+  let botaoID = "btn-friday"; //Declarar ID do botao
+
+  novoBotao.innerHTML = nomeBotao; //Adiciona o nome do botao
+  novoBotao.id = botaoID; //Adiciona ID 
+
+  contBotao.appendChild(novoBotao); //Adiciona o novo botao como filho do container de botoes
+}
+
+criaBotaoSexta("Sexta-Feira"); //Executa funcao com o nome definido de Sexta Feira
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//Exercicio 5
+
+//Implemente uma função que modifica o texto exibido nos dias que são Sexta-feira.
+//Adicione ao botão "Sexta-feira" um evento de "click" e modifique o texto a ser exibido nos dias que são sextas-feiras.
+//É interessante que esse botão possua também a lógica inversa. Ao ser clicado novamente, ele retorna à configuração inicial exibindo os dias.
+
+function sextaFeira(diasSexta) {
+  let getBotaoSexta = document.querySelector("#btn-friday"); //pega botao de Sexta Feira feito no Ex 4
+  let sextaFeira = document.getElementsByClassName("friday"); //pega todos elementos com classe friday
+  let novoTextoSexta = "Sextou!!!";
+
+  getBotaoSexta.addEventListener("click", function () {
+    for (let index = 0; index < sextaFeira.length; index += 1) { //loop em todos os elementos com classe friday
+      if (sextaFeira[index].innerHTML !== novoTextoSexta) {
+        sextaFeira[index].innerHTML = novoTextoSexta; //caso o texto não tenha sido substituído, ao clicar no botão ele será substituido pelo novo texto;
+      } else {
+        sextaFeira[index].innerHTML = diasSexta[index]; //caso o texto já tenha sido substituído, ao clicar no botão ele volta ao texto padrão.
+      }
+    }
+  });
+}
+
+let sextasDez = [4, 11, 18, 25]; //Parametros que serao passados para a funcao
+sextaFeira(sextasDez);
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
+//Exercicio 6
