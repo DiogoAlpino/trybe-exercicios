@@ -153,20 +153,20 @@ sextaFeira(sextasDez);
 //Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, 
 //quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
 
-function mouseOver () {
+function mouseOver() {
   let dias = document.querySelector("#days");
-  dias.addEventListener("mouseover", function(event) { 
+  dias.addEventListener("mouseover", function (event) {
     event.target.style.fontSize = "30px";  //Pega o evento alvo e altera o estilo de fonte
     event.target.style.fontWeight = "600"; //Muda fontweight
     event.target.style.color = "blue";
   });
 }
 
-function mouseOut () {
+function mouseOut() {
   let dias = document.querySelector("#days");
-  dias.addEventListener("mouseout", function(event) {
+  dias.addEventListener("mouseout", function (event) {
     event.target.style.fontSize = "20px";
-    event.target.style.fontWeight = "200"; 
+    event.target.style.fontWeight = "200";
     event.target.style.color = "#777"; //cor cinza
   });
 }
@@ -182,13 +182,13 @@ mouseOut();
 //A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
 //O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
 
-function addTarefa (tarefa) {
+function addTarefa(tarefa) {
   let tasksCont = document.querySelector(".my-tasks"); //Seleciona elemento com classe my-tasks
   let task = document.createElement("span"); //cria tarefa com tag span
 
   task.innerHTML = tarefa; //Colocar parametro da funcao como a nova tarefa
   tasksCont.appendChild(task); //Faz com que a tarefa seja filha do container com elemento my-tasks
-} 
+}
 
 addTarefa("Limpar o quarto"); //Executa a funcao com o parametro escolhido
 
@@ -201,14 +201,40 @@ addTarefa("Limpar o quarto"); //Executa a funcao com o parametro escolhido
 //O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
 //O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
 
-function addLegenda (cor) {
-  let tasksCont = document.querySelector(".my-tasks");
-  let legenda = document.createElement("div");
+function addLegenda(cor) {
+  let tasksCont = document.querySelector(".my-tasks"); //Pega elemento com class my-tasks
+  let legenda = document.createElement("div"); //Cria nova div
 
-  legenda.className = "task";
-  legenda.style.backgroundColor = cor;
-  tasksCont.appendChild(legenda);
+  legenda.className = "task"; //Da classe para a nova div
+  legenda.style.backgroundColor = cor; //Cor de fundo da nova div sera o parametro escolhido pra funcao
+  tasksCont.appendChild(legenda); // div criada sera filha do elemento com classe my-tasks
 
 }
 
 addLegenda("blue");
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Exercicio 9
+
+//Implemente uma função que selecione uma tarefa.
+//Adicione um evento que ao clicar no elemento com a tag <div> referente à cor da sua tarefa, 
+//atribua a esse elemento a classe task selected, ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada.
+//Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task, ou seja, essa tarefa está deixando de ser uma tarefa selecionada.
+
+function selecionaTarefa() {
+  let tarefaCont = document.querySelector(".task"); //Pega div feita no Ex 8
+  let selectedTask = document.getElementsByClassName('task selected');
+
+  tarefaCont.addEventListener("click", function () { //cria evento na minha div feita no Ex 8
+    if (selectedTask.length === 0) {
+      tarefaCont.className = "task selected";
+    } else {
+      tarefaCont.className = "task"
+    }
+  });
+}
+
+selecionaTarefa();
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
