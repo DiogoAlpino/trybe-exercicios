@@ -167,11 +167,29 @@ function mouseOut () {
   dias.addEventListener("mouseout", function(event) {
     event.target.style.fontSize = "20px";
     event.target.style.fontWeight = "200"; 
-    event.target.style.color = "black";
+    event.target.style.color = "#777"; //cor cinza
   });
 }
 
 mouseOver(); //Executa funcoes
 mouseOut();
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Exercicio 7
+
+//Implemente uma função que adicione uma tarefa personalizada ao calendário.
+//A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+//O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+
+function addTarefa (tarefa) {
+  tasksCont = document.querySelector(".my-tasks"); //Seleciona elemento com classe my-tasks
+  task = document.createElement("span"); //cria tarefa com tag span
+
+  task.innerHTML = tarefa; //Colocar parametro da funcao como a nova tarefa
+  tasksCont.appendChild(task); //Faz com que a tarefa seja filha do container com elemento my-tasks
+} 
+
+addTarefa("Limpar o quarto"); //Executa a funcao com o parametro escolhido
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
