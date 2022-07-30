@@ -211,7 +211,7 @@ function addLegenda(cor) {
 
 }
 
-addLegenda("blue");
+addLegenda("orange");
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -236,5 +236,32 @@ function selecionaTarefa() {
 }
 
 selecionaTarefa();
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Exercicio 10
+
+//Implemente uma função que atribua a cor da tarefa ao dia do calendário.
+//Adicione um evento que, ao clicar em um dia do mês no calendário, atribua a esse dia a cor da legenda da sua tarefa selecionada.
+//Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119)
+
+function atribuiCor() {
+  let diaCont = document.querySelector("#days"); //pega primeira ul com id days
+  let taskSelect = document.getElementsByClassName("task selected"); //retorna array com tudo que tem a class task selected
+  let task = document.querySelector(".task"); //pega primeira div com a classe task
+  let corCont = task.style.backgroundColor; //container para a cor da task
+
+  diaCont.addEventListener("click", function(event){ //Para pegar o evento alvo, o evento precisa ser o parametro da funcao
+    let eventTargetColor = event.target.style.color;
+    if (taskSelect.length > 0 && eventTargetColor !== corCont) { //se houver alguma task selecionada e a cor nao for igual a da tarefa
+      let cor = taskSelect[0].style.backgroundColor; //Pega a cor do primeiro elemento e salva na variavel cor
+      event.target.style.color = cor;
+    } else if (eventTargetColor === corCont) { //Se a cor for igual, volta pro cinza
+      event.target.style.color = 'rgb(119,119,119)';
+    }
+  });
+}
+
+atribuiCor();
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
