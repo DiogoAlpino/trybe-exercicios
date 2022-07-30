@@ -148,3 +148,30 @@ let sextasDez = [4, 11, 18, 25]; //Parametros que serao passados para a funcao
 sextaFeira(sextasDez);
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
 //Exercicio 6
+
+//Implemente duas funções que criem um efeito de "zoom". 
+//Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, 
+//quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
+
+function mouseOver () {
+  let dias = document.querySelector("#days");
+  dias.addEventListener("mouseover", function(event) { 
+    event.target.style.fontSize = "30px";  //Pega o evento alvo e altera o estilo de fonte
+    event.target.style.fontWeight = "600"; //Muda fontweight
+    event.target.style.color = "blue";
+  });
+}
+
+function mouseOut () {
+  let dias = document.querySelector("#days");
+  dias.addEventListener("mouseout", function(event) {
+    event.target.style.fontSize = "20px";
+    event.target.style.fontWeight = "200"; 
+    event.target.style.color = "black";
+  });
+}
+
+mouseOver(); //Executa funcoes
+mouseOut();
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
