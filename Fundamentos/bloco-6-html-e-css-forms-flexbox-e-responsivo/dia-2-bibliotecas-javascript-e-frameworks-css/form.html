@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1 class="display-4 text-muted">Sua chance de ganhar uma viagem \o/</h1>
+    <form action="">
+        <input class="form-group" type="text" id="input-name" placeholder="Digite seu nome completo" minlength="10" maxlength="40" required>
+        <br>
+        <br>
+        <input class="form-group" type="email" placeholder="Digite seu e-mail" minlength="10" maxlength="50" required>
+        <br> <br>
+        <fieldset id="destino">
+        <h3 class="display-6">Destino Preferido:</h3>
+        <input type="radio" id="city" value="" name="dest"> 
+        <label for="city">Cidade</label>
+        <input type="radio" id="field" value="" name="dest"> 
+        <label for="field">Campo</label>
+        <input type="radio" id="beach" value="" name="dest"> 
+        <label for="beach">Praia</label>
+        <input type="radio" id="mountains" value="" name="dest"> 
+        <label for="mountains">Montanhas</label>
+        </fieldset>
+        <p>Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
+        <textarea name="" id="" cols="63" rows="15" maxlength="500"></textarea>
+        <p>Qual a melhor data para realizar sua viagem?</p>
+        <input type="date" required>
+        <br>
+        <br>
+        <input type="checkbox"> Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+        <br>
+        <input type="checkbox" required> Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos
+        futuros.
+        <br><br><br>
+        <button type="submit" class="btn btn-success" id="button"> Participar do concurso TrybeTrip</button>
+        <br></br>
+        <button type="reset" class="btn btn-primary"> Limpar </button>
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>
