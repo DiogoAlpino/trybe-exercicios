@@ -44,5 +44,59 @@
 
   }
 
+  .main-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .movie-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 700px;                   /*3 - Adicione uma propriedade que faça com que seu container de filmes tenha uma base de 700px */
+    flex-grow: 10;                       /*4 - Aplique uma propriedade com o valor 10 que expanda o container de filmes. */
+  }
+  
+  .movie-container h2 {
+    margin: 40px 0;
+    text-align: center;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .card-container div {
+    align-items: center;
+    background-color: #5C687C;
+    border: black solid 1px;
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    margin: 10px;
+    flex-basis: 16%;     /*3- e outra base de 16% para as div do container de seu card.*/
+    flex-grow: 1;    /*5 - Adicione uma propriedade com o valor 1 que faça com que suas div do container de filmes ocupe todo o espaço em branco.*/
+            
+  }
+  
+  .aside-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    flex-basis: 350px;                       /* 1 - Aplique uma base de 350px para seu container aside. */
+    justify-content: center;                 /* 2 - Aplique um alinhamento para centralizar*/
+    flex-grow: 1;                            /*e outro para expandir */
+  }
+  
+  .aside-container h3, h4 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .aside-container p {
+    margin: 10px 0;
+    text-align: justify;
+  }
  
 
