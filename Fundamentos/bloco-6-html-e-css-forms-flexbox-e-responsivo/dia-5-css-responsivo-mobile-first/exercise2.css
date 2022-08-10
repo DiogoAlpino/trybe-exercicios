@@ -1,0 +1,62 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  .containter {
+    display: flex;
+  }
+
+  p {
+    padding: 20px;
+  }
+
+  /* 390, 820 e 1280 */
+
+  @media screen and (max-width: 390px) {
+    body {
+        background-color: lightcoral;
+        font-family: sans-serif;
+    }
+
+    .containter {
+        flex-direction: column;
+    }
+    
+    p {
+        padding: 0 5px;
+        line-height: 1.5em;
+    }
+    header p {
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .main-content {
+        justify-content: center;
+        margin: 0 5% 0 5%;
+    }
+
+    aside {
+        margin-left: 10%;
+    }
+
+    footer {
+        margin-left: 5%;
+    }
+  }
+
+ /* @media screen and (min-width: 390px) {
+     body {
+        background-color: blue;
+    
+}
+
+@media screen and (min-width: 1280px) {
+    body {
+        background-color: yellow;
+} */
