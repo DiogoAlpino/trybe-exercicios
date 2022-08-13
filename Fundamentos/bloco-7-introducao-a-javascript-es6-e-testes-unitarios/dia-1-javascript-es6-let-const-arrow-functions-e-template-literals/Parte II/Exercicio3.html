@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contador de Cliques</h1>
+    <main>
+        <div>
+            <p id="contador"></p>
+        </div>
+        <button id="btn">Clique aqui</button>  
+        <button id="cleaner">Limpar</button>      
+    </main>    
+    <script>
+        
+        let conta = 0; // variável que irá armazenar os clicks
+        const btn = document.getElementById('btn');
+        const contador = document.getElementById('contador');
+        const limpar = document.getElementById('cleaner');
+
+        btn.addEventListener('click', () => { 
+            conta = conta + 1;
+            contador.innerHTML = conta;
+        });
+
+        limpar.addEventListener('click', () => { //Para ver se aprendi os conceitos basicos de functions e events
+            conta = 0;
+            contador.innerHTML = 0;
+        });
+    </script>
+</body>
+</html>
