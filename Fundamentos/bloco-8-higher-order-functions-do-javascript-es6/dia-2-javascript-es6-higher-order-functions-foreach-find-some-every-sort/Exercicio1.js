@@ -47,7 +47,7 @@ const books = [
       name: 'Stephen King',
       birthYear: 1947,
     },
-    releaseYear: 1986,
+    releaseYear: 1986, 
   },
   {
     id: 6,
@@ -104,3 +104,19 @@ console.log(booksOrderedByReleaseYearDesc);
 const everyoneWasBornOnSecXX = books.every((book) => book.author.birthYear < 2000 && book.author.birthYear > 1901);
 
 console.log(everyoneWasBornOnSecXX);
+
+//🚀 6 - Faça uma função que retorne true, se algum livro foi lançado na década de 80, e false, caso contrário.
+
+const someBookWasReleaseOnThe80s = books.some((book) => book.releaseYear < 1990 && book.releaseYear > 1979);
+
+console.log(someBookWasReleaseOnThe80s);
+
+//7 - Faça uma função que retorne true, caso nenhum author tenha nascido no mesmo ano, e false, caso contrário.
+
+function authorUnique() {
+  return books.every((book) =>
+    !books.some((bookSome) =>
+      (bookSome.author.birthYear === book.author.birthYear) && (bookSome.author.name !== book.author.name)));
+};
+
+console.log(authorUnique());
